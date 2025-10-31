@@ -12,7 +12,13 @@
     }
     body {      
       background:url('images/bg5.jpg') no-repeat left top fixed;
-      background-size:cover;      
+      background-size:cover;   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;   /*플렉스 컨테이너의 높이는 내용만큼 인식하므로
+      화면 중앙에 배치하려면 플렉스 컨테이너의 높이를 뷰포트 높이로 지정해야 함
+      최소 높이를 뷰포트 높이 전체로 지정*/
     }
     button {
       background-color:#ccc;
