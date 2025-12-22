@@ -98,7 +98,10 @@
     }
 
     /* Do it! 라디오 버튼을 클릭했을 때 label 스타일 지정하기 */
-
+    #signup input:checked + label{ /* input 요소에 checked 속성이 추가되었을 때 label 요소의 스타일 */
+      color: red;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
