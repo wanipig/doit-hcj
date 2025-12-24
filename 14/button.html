@@ -19,8 +19,28 @@
       color: #fff;
       outline: 2px solid #fff;  
       padding:20px 60px;
+      position: relative; /* 부모 요소에 상대적으로 배치 */
+      overflow: hidden; /* 현재 요소의 내용이 넘치면 숨김 */
+      transition: color 1s; /* 글자색 변화를 1초 동안 부드럽게 처리 */
     }
-
+    .button::before{
+      content: "";
+      position: absolute; /* 부모 요소에 상대적으로 배치 */
+      top: 0; /* 부모 요소의 상단에 배치 */
+      left: -50px; /* 부모 요소의 왼쪽에 배치 */
+      width: 0%; /* 부모 요소의 너비와 같게 설정 */
+      height: 100%; /* 부모 요소의 높이과 같게 설정 */
+      background-color: #fff;
+      z-index: -5; /* 다른 요소보다 뒤에(아래에) 배치 */
+      transform: skewX(35deg);
+      transition: width 1s;
+    }
+  .button:hover{
+    color: #ff5e62;
+  }
+  .button:hover::before{
+    width: 150%;
+  }
   </style>
 </head>
 
