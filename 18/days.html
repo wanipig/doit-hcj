@@ -39,7 +39,16 @@
 
   <script>
     // Do it! Date 객체 연습하기
+    let now = new Date(); // 오늘 날짜를 객체로 지정
+    let firstDay = new Date("2025-12-31"); // 시작 날짜를 객체로 지정
 
+    let toNow = now.getTime(); //오늘까지 지난 시간(밀리초)
+    let toFirst = firstDay.getTime(); // 첫 날까지 지난 시간(밀리초)
+    let passedTime = toNow - toFirst; // 첫 날부터 오늘까지 지난 시간(밀리초)
+
+    passedTime = Math.round(passedTime / (1000*60*60*24)); // 밀리초를 일 수로 계산하고 반올림
+
+    document.querySelector('#result').innerText = passedTime;
   </script>
 </body>
 </html>
