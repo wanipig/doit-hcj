@@ -26,7 +26,16 @@
         event.preventDefault();  // 기본 동작을 막음
         newRegister();   // 새로운 주제를 등록하는 함수 호출  
       });
-    }); 
+
+      const itemList = document.querySelector("#itemList");
+      itemList.addEventListener("click", (event)=>{
+        if(event.target.tagName === "LI"){ // 클릭한 요소가 li 요소이면
+          if(confirm("삭제하시겠습니까?")){ // 확인 대화상자 표시
+            event.target.remove(); // 클릭한 요소 삭제
+          }
+        }
+      });
+   }); 
 
     function newRegister() {
       const newItem = document.createElement("li");  // 요소 노드 추가 
